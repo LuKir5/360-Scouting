@@ -2,68 +2,12 @@
 import { ref, computed } from "vue";
 import dayjs from "dayjs";
 import dayjsPluginLocalizedFormat from "dayjs/plugin/localizedFormat";
+import campsData from "../assets/camps.js";
 
 dayjs.extend(dayjsPluginLocalizedFormat);
 dayjs.locale("en");
 
-const camps = ref([
-  {
-    name: "Summer Football Camp",
-    date: "2024-07-15 to 2024-07-20",
-    location: "Berlin",
-    description: "Intensive training for young football talents.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "Easter Football Camp",
-    date: "2024-04-08 to 2024-04-12",
-    location: "Munich",
-    description: "Fun and technique in focus.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "Autumn Football Camp",
-    date: "2024-10-21 to 2024-10-25",
-    location: "Hamburg",
-    description: "Preparation for the new season.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "June Football Camp",
-    date: "2024-06-10 to 2024-06-14",
-    location: "Cologne",
-    description: "Technique training and game practice.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "August Football Camp",
-    date: "2024-08-05 to 2024-08-09",
-    location: "Stuttgart",
-    description: "Preparation for the second half of the season.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "Extra Football Camp",
-    date: "2024-06-05 to 2024-07-09",
-    location: "Stuttgart",
-    description: "Preparation for the second half of the season.",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-  {
-    name: "January Football Camp",
-    date: "2025-01-10 to 2025-01-14",
-    location: "Frankfurt",
-    description: "Start the year with football",
-    scout: "Immo Osterkamp",
-    deadline: "2024-07-01",
-  },
-]);
+const camps = ref(campsData);
 
 const campsByMonth = computed(() => {
   const groupedCamps = {};
@@ -251,7 +195,7 @@ const campsByMonth = computed(() => {
   left: 0;
   width: 100%;
   height: 30vh;
-  background-image: url("./src/components/img/football-background.jpg");
+  background-image: url("../components/img/football-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;

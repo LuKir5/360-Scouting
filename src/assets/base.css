@@ -1,4 +1,3 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
   --vt-c-1: #f05a32;
   --vt-c-2: #05061f;
@@ -8,7 +7,6 @@
   --vt-c-divider: #d2d2d280;
 }
 
-/* semantic color variables for this project */
 :root {
   --color-text: var(--vt-c-3);
   --color-background: var(--vt-c-2);

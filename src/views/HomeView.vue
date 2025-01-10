@@ -1,19 +1,33 @@
-<script setup></script>
+<script setup>
+import { ref, computed } from "vue";
+import dayjs from "dayjs";
+import dayjsPluginLocalizedFormat from "dayjs/plugin/localizedFormat";
+import campsData from "../assets/camps.js";
+
+dayjs.extend(dayjsPluginLocalizedFormat);
+dayjs.locale("en");
+
+const camps = ref(campsData);
+
+const sortedCamps = computed(() => {
+  return [...camps.value].sort((a, b) => {
+    const dateA = dayjs(a.date.split(" to ")[0]);
+    const dateB = dayjs(b.date.split(" to ")[0]);
+    return dateA.isBefore(dateB) ? -1 : 1;
+  });
+});
+</script>
 
 <template>
   <div class="hero-section">
-    <img
-      src="./src/components/img/football-background.jpg"
-      alt=""
-      class="hero-img"
-    />
+    <img src="" alt="" class="hero-img" />
     <h1 class="hero-title">360° Scouting</h1>
     <p class="hero-subtitle">Find your passion</p>
   </div>
   <div class="home-section">
     <div class="slider-container">
       <h2 class="container-title">Next Scouting Camps</h2>
-      <v-slide-group show-arrows class="slider">
+      <v-slide-group show-arrows class="slider" v-if="sortedCamps.length > 0">
         <template v-slot:prev="{ props }">
           <v-btn v-bind="props" icon color="var(--vt-c-2)">
             <v-icon size="50" color="var(--vt-c-1)">mdi-chevron-left</v-icon>
@@ -25,7 +39,11 @@
           </v-btn>
         </template>
 
-        <v-slide-group-item v-for="n in 6" :key="n" v-slot="{ toggle }">
+        <v-slide-group-item
+          v-for="camp in sortedCamps"
+          :key="camp.date"
+          v-slot="{ toggle }"
+        >
           <v-card
             class="ma-2 slider-cards card-background"
             rounded
@@ -33,11 +51,11 @@
             max-width="20rem"
             min-width="15rem"
           >
-            <v-card-title>Camp {{ n }}</v-card-title>
-            <v-card-subtitle>01.01.2025</v-card-subtitle>
+            <v-card-title>{{ camp.name }}</v-card-title>
+            <v-card-subtitle>{{ camp.date }}</v-card-subtitle>
             <v-card-text
-              >Ort/Adresse <br />Link zu Details <br />
-              Anmeldeschluss</v-card-text
+              >Location: {{ camp.location }}<br />
+              Registration deadline: {{ camp.deadline }}</v-card-text
             >
             <v-card-actions>More Info</v-card-actions>
           </v-card>
@@ -138,7 +156,7 @@
   left: 0;
   width: inherit;
   height: inherit;
-  background-image: url("./src/components/img/football-background.jpg");
+  background-image: url("../components/img/football-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;

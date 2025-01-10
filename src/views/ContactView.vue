@@ -112,7 +112,7 @@ export default {
   left: 0;
   width: 100%;
   height: 30vh;
-  background-image: url("./src/components/img/football-background.jpg");
+  background-image: url("../components/img/football-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 1;
