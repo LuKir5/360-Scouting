@@ -22,11 +22,16 @@ const sortedCamps = computed(() => {
   <div class="hero-section">
     <img src="" alt="" class="hero-img" />
     <h1 class="hero-title">360° Scouting</h1>
-    <p class="hero-subtitle">Find your passion</p>
+    <p class="hero-subtitle">Scouting the Future.</p>
+    <p class="hero-subtitle">Precision Scouting. Powerful Results.</p>
   </div>
   <div class="home-section">
-    <div class="slider-container">
-      <h2 class="container-title">Next Scouting Camps</h2>
+    <h2 class="section-title pa-0">
+      Next Scouting Camps
+      <div class="background-wrapper"></div>
+    </h2>
+
+    <div class="home-container-one">
       <v-slide-group show-arrows class="slider" v-if="sortedCamps.length > 0">
         <template v-slot:prev="{ props }">
           <v-btn v-bind="props" icon color="var(--vt-c-2)">
@@ -45,7 +50,7 @@ const sortedCamps = computed(() => {
           v-slot="{ toggle }"
         >
           <v-card
-            class="ma-2 slider-cards card-background"
+            class="ma-2 slider-cards card-background elevation-4"
             rounded
             @click="toggle"
             max-width="20rem"
@@ -62,10 +67,14 @@ const sortedCamps = computed(() => {
         </v-slide-group-item>
       </v-slide-group>
     </div>
-    <div class="news-container">
-      <h2 class="container-title">News</h2>
+
+    <h2 class="section-title pa-0">
+      News
+      <div class="background-wrapper"></div>
+    </h2>
+    <div class="home-container-two">
       <v-list class="news-list">
-        <v-list-item class="news-item">
+        <v-list-item class="news-item elevation-10">
           <v-card class="news-card"
             ><v-card-title>News 1</v-card-title
             ><v-card-subtitle>01.01.2025</v-card-subtitle
@@ -79,7 +88,7 @@ const sortedCamps = computed(() => {
             ></v-card
           >
         </v-list-item>
-        <v-list-item class="news-item">
+        <v-list-item class="news-item elevation-10">
           <v-card class="news-card"
             ><v-card-title>News 1</v-card-title
             ><v-card-subtitle>01.01.2025</v-card-subtitle
@@ -93,7 +102,7 @@ const sortedCamps = computed(() => {
             ></v-card
           >
         </v-list-item>
-        <v-list-item class="news-item">
+        <v-list-item class="news-item elevation-10">
           <v-card class="news-card"
             ><v-card-title>News 1</v-card-title
             ><v-card-subtitle>01.01.2025</v-card-subtitle
@@ -107,7 +116,7 @@ const sortedCamps = computed(() => {
             ></v-card
           >
         </v-list-item>
-        <v-list-item id="news-item" class="news-item">
+        <v-list-item class="news-item elevation-10">
           <v-card class="news-card"
             ><v-card-title>News 1</v-card-title
             ><v-card-subtitle>01.01.2025</v-card-subtitle
@@ -121,7 +130,7 @@ const sortedCamps = computed(() => {
             ></v-card
           >
         </v-list-item>
-        <v-list-item class="news-item">
+        <v-list-item class="news-item elevation-10">
           <v-card class="news-card"
             ><v-card-title>News 1</v-card-title
             ><v-card-subtitle>01.01.2025</v-card-subtitle
@@ -140,10 +149,10 @@ const sortedCamps = computed(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .hero-section {
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,31 +172,48 @@ const sortedCamps = computed(() => {
   z-index: -1;
 }
 
-.hero-subtitle {
-  font-size: 2.6rem;
-  color: var(--color-heading);
-  text-align: center;
+.hero-section:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: var(--color-background);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(241, 237, 238, 0.8) 0%,
+    rgba(241, 237, 238, 0.5) 1%,
+    rgba(241, 237, 238, 0) 10%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(241, 237, 238, 0.8) 0%,
+    rgba(241, 237, 238, 0.5) 1%,
+    rgba(241, 237, 238, 0) 10%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(241, 237, 238, 0.8) 0%,
+    rgba(241, 237, 238, 0.5) 1%,
+    rgba(241, 237, 238, 0) 10%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f1edee",endColorstr="#f1edee",GradientType=1);
 }
 
 .home-section {
   width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
+  gap: 1rem;
 }
 
-.container-title {
-  font-size: 2rem;
-  color: var(--color-heading);
-  text-align: center;
-}
-
-.slider-container {
+.home-container-one {
   width: 100%;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  /* align-items: center; */
+  padding: 2rem 0;
 }
 
 .slider {
@@ -197,48 +223,36 @@ const sortedCamps = computed(() => {
 .slider-cards {
   color: var(--color-text);
   border: 1px solid var(--color-border);
+  margin: 1rem;
 }
 
 .card-background {
-  background: rgb(35, 40, 75);
-  background: -moz-radial-gradient(
-    circle,
-    rgba(35, 40, 75, 1) 0%,
-    rgba(5, 7, 44, 1) 100%
-  );
-  background: -webkit-radial-gradient(
-    circle,
-    rgba(35, 40, 75, 1) 0%,
-    rgba(5, 7, 44, 1) 100%
-  );
-  background: radial-gradient(
-    circle,
-    rgba(35, 40, 75, 1) 0%,
-    rgba(5, 7, 44, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#23284b",endColorstr="#05072c",GradientType=1);
+  color: var(--color-text);
+  background-color: var(--color-card-background);
+  border: 1px solid var(--color-border);
 }
 
 .card-text {
   color: var(--color-text);
 }
 
-.news-container {
+.home-container-two {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .news-list {
   width: 100%;
-  background-color: var(--color-background);
+  background-color: transparent;
 }
 
 .news-item {
   color: var(--color-text);
-  margin-bottom: 2rem;
+  padding: 0 !important;
+  margin: 1rem 1rem 2rem 1rem;
 }
 
 .news-card {

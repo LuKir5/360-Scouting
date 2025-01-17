@@ -38,11 +38,12 @@ const campsByMonth = computed(() => {
     <h1 class="hero-title">Calendar</h1>
   </div>
   <div class="calendar-section">
+    <h1 class="section-title">
+      Next dates for our Scouting Camps
+      <div class="background-wrapper"></div>
+    </h1>
     <div class="calendar-container-one">
-      <h1 class="calendar-title">
-        Here you can find the next dates for our 360°-Scouting Camps
-      </h1>
-      <p class="calendar-text text">
+      <p class="text">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -56,10 +57,10 @@ const campsByMonth = computed(() => {
     </div>
     <div class="calendar-container-two">
       <div v-for="monthGroup in campsByMonth" :key="monthGroup.monthName">
-        <h2 class="month-heading">{{ monthGroup.monthName }}</h2>
+        <h2 class="container-title">{{ monthGroup.monthName }}</h2>
         <v-list class="camp-list" density="compact">
           <v-list-item
-            class="camp-list-item"
+            class="camp-list-item elevation-10 ma-3"
             v-for="(camp, index) in monthGroup.camps"
             :key="index"
           >
@@ -68,6 +69,7 @@ const campsByMonth = computed(() => {
                 icon="mdi-football"
                 color="var(--color-accent)"
                 size="large"
+                style="opacity: 1"
               ></v-icon>
             </template>
             <v-list-item-title class="camp-list-item-title">{{
@@ -173,7 +175,12 @@ const campsByMonth = computed(() => {
             </v-dialog>
           </v-list-item>
         </v-list>
-        <v-divider class="month-divider"></v-divider>
+        <v-divider
+          class="horizontal-divider"
+          color="var(--color-accent)"
+          thickness="1px"
+          opacity="1"
+        ></v-divider>
       </div>
     </div>
   </div>
@@ -181,8 +188,8 @@ const campsByMonth = computed(() => {
 
 <style scoped>
 .hero-section {
-  height: 30vh;
   width: 100%;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,11 +197,11 @@ const campsByMonth = computed(() => {
 }
 
 .hero-img {
+  width: 100%;
+  height: 40vh;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 30vh;
   background-image: url("../components/img/football-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,43 +216,19 @@ const campsByMonth = computed(() => {
   flex-direction: column;
   flex-wrap: wrap;
   padding: 2rem 1rem;
+  gap: 1rem;
 }
 
 .calendar-container-one {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
-}
-
-.calendar-title {
-  width: 100%;
-  font-size: 1.8rem;
-  color: var(--color-heading);
-  padding-bottom: 1rem;
-}
-
-.calendar-text {
-  padding-bottom: 1rem;
+  padding: 2rem 0;
 }
 
 .calendar-container-two {
   width: 100%;
-  padding-bottom: 1rem;
-}
-
-.month-heading {
-  font-size: 1.5rem;
-  color: var(--color-accent);
-}
-
-.month-divider {
-  position: relative;
-  width: 100vw;
-  color: var(--color-accent);
-  opacity: 0.5;
-  margin-bottom: 2rem;
-  left: -1rem;
+  padding: 2rem 0;
 }
 
 .camp-list {
@@ -276,7 +259,7 @@ const campsByMonth = computed(() => {
 
 .contact-button {
   background-color: var(--color-accent);
-  color: var(--color-background);
+  color: var(--color-text);
   margin-top: 1rem;
 }
 
@@ -284,10 +267,12 @@ const campsByMonth = computed(() => {
   opacity: 0.5;
 }
 
+@media screen and (min-width: 576px) {
+}
+
 @media screen and (min-width: 960px) {
-  .month-divider {
-    position: static;
-    width: 100%;
-  }
+}
+
+@media screen and (min-width: 1800px) {
 }
 </style>

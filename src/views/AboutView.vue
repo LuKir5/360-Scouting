@@ -6,27 +6,38 @@
     <h1 class="hero-title">About us</h1>
   </div>
   <div class="about-section">
+    <h1 class="section-title">
+      We are 360° Scouting!
+      <div class="background-wrapper"></div>
+    </h1>
     <div class="about-container-one">
+      <img
+        src="../components/img/placeholder.jpg"
+        alt=""
+        class="about-img-one"
+      />
       <div class="accent-container">
-        <h1 class="about-title">Welcome to 360° Scouting!</h1>
-        <p class="about-text text">
+        <p class="about-text text elevation-10">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
+          sadipscing elitr.
         </p>
       </div>
     </div>
+    <v-divider
+      class="horizontal-divider my-8 my-lg-16"
+      color="var(--color-accent)"
+      thickness="2px"
+      opacity="1"
+    ></v-divider>
+    <h1 class="section-title">
+      Our corporate values
+      <div class="background-wrapper"></div>
+    </h1>
     <div class="about-container-two">
-      <div class="about-img-one"></div>
-    </div>
-    <div class="about-container-three">
-      <h1 class="about-title">Our strategy is following our mission</h1>
       <h2 class="about-num">01</h2>
       <p class="about-num-text text">
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -69,8 +80,8 @@
 
 <style scoped>
 .hero-section {
-  height: 30vh;
   width: 100%;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,15 +89,14 @@
 }
 
 .hero-img {
+  width: 100%;
+  height: 40vh;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 30vh;
   background-image: url("../components/img/football-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 1;
   z-index: -1;
 }
 
@@ -97,60 +107,45 @@
   flex-direction: column;
   flex-wrap: wrap;
   padding: 2rem 1rem;
-}
-
-.accent-container {
-  padding: 0;
-  margin: 0;
-  display: block;
-  /* background-color: var(--color-accent); */
-  /* padding: 2rem; */
-  /* border-radius: 15px; */
-}
-
-.about-title {
-  width: 100%;
-  font-size: 1.8rem;
-  color: var(--color-heading);
-  padding-bottom: 1rem;
+  gap: 1rem;
 }
 
 .about-text {
-  padding-bottom: 1rem;
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  border-radius: 15px;
+  padding: 1rem;
 }
 
 .about-container-one {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
-}
-
-.about-container-two {
-  position: relative;
-  left: -1rem;
-  width: 100vw;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
+  gap: 2rem;
 }
 
 .about-img-one {
-  position: relative;
-  height: 500px;
-  background-image: url("../components/img/football-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
 
-.about-container-three {
+.accent-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.about-container-two {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding: 2rem 0;
 }
 
 .about-num {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--color-accent);
   margin-bottom: 1rem;
 }
@@ -165,13 +160,18 @@
 }
 
 @media screen and (min-width: 960px) {
-  .about-img-one {
-    border-radius: 15px;
+  .about-container-one {
+    flex-direction: row;
   }
 
-  .about-container-two {
-    width: 100%;
-    position: static;
+  .about-img-one {
+    width: 50%;
+  }
+
+  .accent-container {
+    width: 50%;
+    position: relative;
+    right: 5rem;
   }
 
   h2.about-num {
@@ -185,7 +185,7 @@
     margin-bottom: 4rem;
   }
 
-  .about-num-text::before {
+  .about-num-text:before {
     position: absolute;
     font-size: 4rem;
     color: var(--color-accent);
@@ -209,7 +209,17 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .about-text {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (min-width: 1800px) {
+  .about-text {
+    font-size: 1.8rem;
+  }
+
   .about-num-text {
     min-height: 8rem;
     display: flex;

@@ -1,35 +1,43 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
+import { createApp } from "vue";
 
 // Vuetify
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import * as components from "vuetify/components";
+import * as directives from "vuetify/directives";
 
 //Material Design Icons
-import '@mdi/font/css/materialdesignicons.css'
-import { aliases, mdi } from 'vuetify/lib/iconsets/mdi.mjs'
+import "@mdi/font/css/materialdesignicons.css";
+import { aliases, mdi } from "vuetify/lib/iconsets/mdi.mjs";
 
-import App from './App.vue'
-import router from './router'
+import App from "./App.vue";
+import router from "./router";
 
 const vuetify = createVuetify({
-    components,
-    directives,
-    icons: {
-      defaultSet: 'mdi', // Standard-Iconset auf Material Design Icons setzen
-      aliases,
-      sets: {
-        mdi,
-      },
+  components,
+  directives,
+  icons: {
+    defaultSet: "mdi", // Standard-Iconset auf Material Design Icons setzen
+    aliases,
+    sets: {
+      mdi,
     },
-})
+  },
+});
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
-app.use(vuetify) // Vuetify einbinden
+app.use(router);
+app.use(vuetify); // Vuetify einbinden
 
-app.mount('#app')
+app.mount("#app");
+
+window.onload = function () {
+  const appElement = document.getElementById("app");
+  if (appElement) {
+    // Überprüfen, ob das Element existiert
+    appElement.classList.add("loaded");
+  }
+};
