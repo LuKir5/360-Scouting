@@ -10,9 +10,9 @@
       <h3 class="section-subtitle">Legal Notice</h3>
       <h2 class="section-title mt-3 mb-6">Impressum</h2>
       <p class="text">360°-Scouting</p>
-      <p class="text">Immo Osterkamp</p>
-      <p class="text">Hildesheimer Str. 420</p>
-      <p class="text">30165 Hannover</p>
+      <p class="text">Max Mustermann</p>
+      <p class="text">Hildesheimer Str. 123</p>
+      <p class="text">12345 Göttingen</p>
       <p class="text">Germany</p>
     </div>
     <div class="privacy-container">
