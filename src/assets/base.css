@@ -1,10 +1,80 @@
+@font-face {
+  font-family: "FiraSans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../components/fonts/FiraSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../components/fonts/FiraSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../components/fonts/FiraSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: italic;
+  font-weight: 300;
+  src: url("../components/fonts/FiraSans-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../components/fonts/FiraSans-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: italic;
+  font-weight: 200;
+  src: url("../components/fonts/FiraSans-ExtraLightItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../components/fonts/FiraSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("../components/fonts/FiraSans-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../components/fonts/FiraSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "FiraSans";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../components/fonts/FiraSans-BoldItalic.ttf") format("truetype");
+}
+
 :root {
   --vt-c-1: #f05a32;
-  --vt-c-2: #05061f;
-  /* #090c43 */
-  --vt-c-2-1: #05072c;
-  --vt-c-3: #d2d2d2;
-  --vt-c-divider: #d2d2d280;
+  --vt-c-2: rgb(241, 237, 238);
+  --vt-c-2-1: #f1edee;
+  --vt-c-3: #05061f;
+  --vt-c-4: #034078;
 }
 
 :root {
@@ -12,8 +82,13 @@
   --color-background: var(--vt-c-2);
   --color-card-background: var(--vt-c-2-1);
   --color-accent: var(--vt-c-1);
-  --color-heading: var(--vt-c-1);
-  --color-border: var(--vt-c-divider);
+  --color-heading: var(--vt-c-3);
+  --color-border: var(--vt-c-1);
+  --color-accent-2: var(--vt-c-4);
+}
+
+:root {
+  --font-1: "FiraSans", sans-serif;
 }
 
 *,
@@ -27,14 +102,30 @@
 html {
   padding: 0;
   margin: 0;
+  /* scroll-behavior: smooth; */
 }
 
 body {
   min-height: 100vh;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-1);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.fadein {
+  opacity: 0;
+  -moz-transition: opacity 1.5s;
+  -webkit-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+
+#app.loaded.fadein {
+  opacity: 1;
+}
+
+.aos-visible {
+  opacity: 1 !important;
+  transform: none !important;
 }

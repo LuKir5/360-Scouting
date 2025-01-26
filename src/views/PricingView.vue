@@ -1,30 +1,29 @@
 <script setup></script>
 
 <template>
-  <div class="hero-section">
-    <img src="" alt="" class="hero-img" />
-    <h1 class="hero-title">Pricing</h1>
-    <p class="hero-subtitle"></p>
+  <div class="hero-section-sub">
+    <img src="" alt="" class="hero-img-sub" />
+    <h1
+      class="hero-title text-center"
+      data-aos="zoom in"
+      data-aos-duration="1000"
+    >
+      Pricing
+    </h1>
   </div>
   <div class="pricing-section">
-    <div class="pricing-container-one">
-      <h1 class="pricing-title">Learn more about the costs of our products</h1>
-      <p class="pricing-text text">
-        Further down you cann see our prices for our 360° Database and for our
-        360° Scouting Camps.<br />For the database, we can currently only offer
-        you to fill out a registration form and send it to us by e-mail. We will
-        then send you further information about payment and access to the
-        database.<br />To participate in one of our camps, please send us the
-        registration form available for download at the bottom of the page by
-        e-mail. We will also contact you regarding the payment process.
-      </p>
-    </div>
-
-    <div class="pricing-container-two">
-      <v-container class="pb-10" fluid>
+    <div
+      class="pricing-container-one"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-once="true"
+    >
+      <h3 class="section-subtitle">Look at our next camp dates</h3>
+      <h2 class="section-title mt-3 mb-6">Costs of our products</h2>
+      <v-container class="pricing-subcontainer" fluid>
         <h2 class="pricing-subtitle font-weight-bold">360° Database</h2>
         <v-sheet
-          class="mx-auto pa-2 card-background"
+          class="mx-auto pa-2 card-background elevation-10"
           max-width="900"
           rounded="xl"
         >
@@ -57,7 +56,7 @@
             </v-col>
             <v-col class="pa-6 d-flex flex-column justify-center" cols="12">
               <h3 class="text-h5 font-weight-bold mb-4 pricing-card-title">
-                One year subscription
+                Elevate Your Recruiting. Explore Our Database.
               </h3>
               <p class="card-text mb-4">
                 Get the most out of Vuetify with a one year subscription. This
@@ -70,10 +69,10 @@
         </v-sheet>
       </v-container>
 
-      <v-container class="pb-10" fluid>
+      <v-container class="pricing-subcontainer" fluid>
         <h2 class="pricing-subtitle font-weight-bold">360° Scouting Camp</h2>
         <v-sheet
-          class="mx-auto pa-2 card-background"
+          class="mx-auto pa-2 card-background elevation-10"
           max-width="900"
           rounded="xl"
         >
@@ -106,7 +105,7 @@
             </v-col>
             <v-col class="pa-6 d-flex flex-column justify-center" cols="12">
               <h3 class="text-h5 font-weight-bold mb-4 pricing-card-title">
-                Camp participation
+                Where Potential Meets Opportunity.
               </h3>
               <p class="card-text mb-4">
                 Get the most out of Vuetify with a one year subscription. This
@@ -119,66 +118,73 @@
         </v-sheet>
       </v-container>
     </div>
-    <p class="pricing-text text">
-      If you have more detailed questions about our payment process, please
-      contact us by e-mail. We are working on making the registration & payment
-      process easier and faster for you in the future.<br />Thank you for your
-      understanding!
-    </p>
+    <v-divider
+      class="horizontal-divider my-8 my-lg-16"
+      color="var(--color-accent)"
+      thickness="2px"
+      opacity="1"
+      data-aos="slide-left"
+      data-aos-anchor=".pricing-container-two"
+      data-aos-once="true"
+      data-aos-duration="1000"
+    ></v-divider>
+    <div
+      class="pricing-container-two"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-bottom"
+      data-aos-once="true"
+      data-aos-delay="500"
+    >
+      <v-container fluid width="80%" class="py-6 px-0">
+        <h2 class="container-subtitle">Our Pricing</h2>
+        <p class="text pb-4">
+          Further down you cann see our prices for our 360° Database and for our
+          360° Scouting Camps.
+        </p>
+      </v-container>
+      <v-container fluid width="80%" class="py-6 px-0">
+        <h2 class="container-subtitle">Registration Process</h2>
+        <p class="text pb-4">
+          For the database, we can currently only offer you to fill out a
+          registration form and send it to us by e-mail. We will then send you
+          further information about payment and access to the database.<br />To
+          participate in one of our camps, please send us the registration form
+          available for download at the bottom of the page by e-mail. We will
+          also contact you regarding the payment process.
+        </p>
+      </v-container>
+      <v-container fluid width="80%" class="py-6 px-0">
+        <h2 class="container-subtitle">We're here to help</h2>
+        <p class="text pb-4">
+          If you have more detailed questions about our payment process, please
+          contact us by e-mail. We are working on making the registration &
+          payment process easier and faster for you in the future.<br />Thank
+          you for your understanding!
+        </p>
+      </v-container>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.hero-section {
-  height: 30vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30vh;
-  background-image: url("../components/img/football-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 1;
-  z-index: -1;
-}
-
 .pricing-section {
   width: 100%;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
+  padding: 0;
+  gap: 1rem;
 }
 
 .pricing-container-one {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding: 2rem 1rem;
 }
 
-.pricing-container-two {
+.pricing-subcontainer {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1rem;
-}
-
-.pricing-title {
-  width: 100%;
-  font-size: 1.8rem;
-  color: var(--color-heading);
-  padding-bottom: 1rem;
 }
 
 .pricing-subtitle {
@@ -189,17 +195,53 @@
   padding-bottom: 0.5rem;
 }
 
-.pricing-text {
-  padding-bottom: 1rem;
-}
-
 .pricing-card-title {
   color: var(--color-heading);
 }
 
+.pricing-container-two {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .pricing-title:before {
+    margin-right: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .pricing-container-one {
+    width: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .pricing-subcontainer {
+    width: 50%;
+  }
+
+  .pricing-container-two {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .pricing-subtitle {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (min-width: 1400px) {
   .pricing-container-two {
-    flex-direction: row;
+    width: 50%;
   }
+}
+
+@media screen and (min-width: 1800px) {
 }
 </style>

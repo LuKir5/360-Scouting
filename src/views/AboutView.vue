@@ -1,49 +1,79 @@
 <script setup></script>
 
 <template>
-  <div class="hero-section">
-    <img src="" alt="" class="hero-img" />
-    <h1 class="hero-title">About us</h1>
+  <div class="hero-section-sub">
+    <img src="" alt="" class="hero-img-sub" />
+    <h1
+      class="hero-title text-center"
+      data-aos="zoom in"
+      data-aos-duration="1000"
+    >
+      About us
+    </h1>
   </div>
   <div class="about-section">
-    <div class="about-container-one">
+    <div
+      class="about-container-one"
+      data-aos="fade-up"
+      data-aos-anchor-placement="center-bottom"
+      data-aos-once="true"
+    >
+      <h3 class="section-subtitle">Let us introduce ourselves</h3>
+      <h2 class="section-title mt-3 mb-6">We are 360° Scouting!</h2>
+      <img
+        src="../components/img/placeholder.jpg"
+        alt=""
+        class="about-img-one elevation-10"
+      />
       <div class="accent-container">
-        <h1 class="about-title">Welcome to 360° Scouting!</h1>
-        <p class="about-text text">
+        <p class="about-text text elevation-10">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
           rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
           ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
+          sadipscing elitr.
         </p>
       </div>
     </div>
-    <div class="about-container-two">
-      <div class="about-img-one"></div>
-    </div>
-    <div class="about-container-three">
-      <h1 class="about-title">Our strategy is following our mission</h1>
+    <v-divider
+      class="horizontal-divider my-8 my-lg-16"
+      color="var(--color-accent)"
+      thickness="2px"
+      opacity="1"
+      data-aos="slide-left"
+      data-aos-anchor=".about-container-two"
+      data-aos-once="true"
+      data-aos-duration="1000"
+    ></v-divider>
+
+    <div
+      class="about-container-two"
+      data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-once="true"
+    >
+      <h3 class="section-subtitle">To ensure you quality</h3>
+      <h2 class="section-title mt-3 mb-6">Our corporate values</h2>
       <h2 class="about-num">01</h2>
       <p class="about-num-text text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna.
+        Precision Scouting.<br />Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut labore et dolore magna.
       </p>
       <h2 class="about-num">02</h2>
       <p class="about-num-text text">
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna.
+        Powerful Results.<br />Lorem ipsum dolor sit amet, consetetur sadipscing
+        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+        dolore magna.
       </p>
       <h2 class="about-num">03</h2>
       <p class="about-num-text text">
@@ -68,89 +98,53 @@
 </template>
 
 <style scoped>
-.hero-section {
-  height: 30vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 30vh;
-  background-image: url("../components/img/football-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 1;
-  z-index: -1;
-}
-
 .about-section {
   width: 100%;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
-}
-
-.accent-container {
   padding: 0;
-  margin: 0;
-  display: block;
-  /* background-color: var(--color-accent); */
-  /* padding: 2rem; */
-  /* border-radius: 15px; */
-}
-
-.about-title {
-  width: 100%;
-  font-size: 1.8rem;
-  color: var(--color-heading);
-  padding-bottom: 1rem;
-}
-
-.about-text {
-  padding-bottom: 1rem;
+  gap: 1rem;
 }
 
 .about-container-one {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
-}
-
-.about-container-two {
-  position: relative;
-  left: -1rem;
-  width: 100vw;
-  padding-bottom: 2rem;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 .about-img-one {
-  position: relative;
-  height: 500px;
-  background-image: url("../components/img/football-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
 
-.about-container-three {
+.accent-container {
+  width: 70%;
+  position: relative;
+  bottom: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.about-text {
+  color: var(--color-background);
+  background-color: var(--color-accent);
+  border-radius: 15px;
+  padding: 1rem;
+}
+
+.about-container-two {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding: 2rem 1rem;
 }
 
 .about-num {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--color-accent);
   margin-bottom: 1rem;
 }
@@ -162,16 +156,44 @@
 }
 
 @media screen and (min-width: 576px) {
+  .about-img-one {
+    width: 70%;
+  }
+
+  .accent-container {
+    width: 60%;
+  }
 }
 
 @media screen and (min-width: 960px) {
+  .about-container-one {
+    width: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
   .about-img-one {
-    border-radius: 15px;
+    width: 65%;
+    position: relative;
+    left: 2rem;
+  }
+
+  .accent-container {
+    width: 35%;
+    position: relative;
+    right: 2rem;
+    bottom: 0;
   }
 
   .about-container-two {
-    width: 100%;
-    position: static;
+    width: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 2rem 0;
   }
 
   h2.about-num {
@@ -185,7 +207,7 @@
     margin-bottom: 4rem;
   }
 
-  .about-num-text::before {
+  .about-num-text:before {
     position: absolute;
     font-size: 4rem;
     color: var(--color-accent);
@@ -209,7 +231,20 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
+}
+
 @media screen and (min-width: 1800px) {
+  .about-img-one {
+    width: 50%;
+    left: 5rem;
+  }
+
+  .accent-container {
+    width: 30%;
+    right: 5rem;
+  }
+
   .about-num-text {
     min-height: 8rem;
     display: flex;
